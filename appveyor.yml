@@ -1,6 +1,7 @@
 version: '1.1.{build}'
 configuration:
     - release
+    - debug
 os: Visual Studio 2015
 before_build:
     - git submodule update --init --recursive
