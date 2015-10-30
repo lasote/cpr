@@ -536,6 +536,7 @@ void runServer(struct mg_server* server) {
 
     std::lock_guard<std::mutex> server_lock(server_mutex);
     mg_destroy_server(&server);
+    shutdown_mutex.unlock();
     server_cv.notify_one();
 }
 
